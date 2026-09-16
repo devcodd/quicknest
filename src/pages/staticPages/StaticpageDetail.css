@@ -1,0 +1,575 @@
+/* =========================================================
+   STATIC PAGE DETAIL
+========================================================= */
+
+.static-page-detail {
+     width: 100%;
+     padding: 28px 30px 35px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.static-page-detail-header {
+     display: flex;
+     align-items: center;
+
+     gap: 14px;
+
+     margin-bottom: 24px;
+}
+
+.static-page-detail-heading {
+     display: flex;
+     align-items: center;
+
+     gap: 12px;
+
+     flex: 1;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.static-page-detail-back-btn {
+     width: 40px;
+     height: 40px;
+
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+
+     flex-shrink: 0;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 8px;
+
+     background: #ffffff;
+
+     color: #4b5568;
+
+     cursor: pointer;
+
+     transition: all 0.2s ease;
+}
+
+.static-page-detail-back-btn:hover {
+     background: #f8fafc;
+
+     border-color: #cbd5e1;
+
+     color: #2563eb;
+}
+
+
+/* =========================================================
+   HEADER ICON
+========================================================= */
+
+.static-page-detail-icon {
+     width: 42px;
+     height: 42px;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     flex-shrink: 0;
+
+     border: 1px solid #dbe5f3;
+     border-radius: 8px;
+
+     background: #f5f9ff;
+
+     color: #2563eb;
+}
+
+.static-page-detail-icon svg {
+     width: 19px;
+     height: 19px;
+}
+
+
+/* =========================================================
+   HEADER TEXT
+========================================================= */
+
+.static-page-detail-header h1 {
+     margin: 0;
+
+     color: #172033;
+
+     font-size: 27px;
+     font-weight: 700;
+
+     line-height: 1.2;
+}
+
+.static-page-detail-header p {
+     margin: 6px 0 0;
+
+     color: #7c8497;
+
+     font-size: 13px;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.static-page-detail-edit-btn {
+     height: 40px;
+
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+
+     gap: 7px;
+
+     padding: 0 15px;
+
+     flex-shrink: 0;
+
+     border: 0;
+     border-radius: 7px;
+
+     background: #2563eb;
+
+     color: #ffffff;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition: all 0.2s ease;
+}
+
+.static-page-detail-edit-btn svg {
+     width: 15px;
+     height: 15px;
+}
+
+.static-page-detail-edit-btn:hover {
+     background: #1d4ed8;
+
+     transform: translateY(-1px);
+
+     box-shadow:
+          0 5px 14px rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.static-page-detail-card {
+     width: 100%;
+
+     overflow: hidden;
+
+     border: 1px solid #e3e9f1;
+     border-radius: 10px;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 2px 7px rgba(15, 23, 42, 0.03);
+}
+
+
+/* =========================================================
+   META INFORMATION
+========================================================= */
+
+.static-page-detail-meta {
+     display: grid;
+
+     grid-template-columns:
+          1.5fr 1fr 0.7fr;
+
+     border-bottom: 1px solid #edf0f4;
+}
+
+.static-page-detail-meta-item {
+     min-height: 82px;
+
+     display: flex;
+     flex-direction: column;
+
+     justify-content: center;
+
+     padding: 17px 22px;
+
+     border-right: 1px solid #edf0f4;
+}
+
+.static-page-detail-meta-item:last-child {
+     border-right: 0;
+}
+
+.static-page-detail-meta-item>span:first-child {
+     margin-bottom: 7px;
+
+     color: #98a2b3;
+
+     font-size: 11px;
+     font-weight: 600;
+
+     text-transform: uppercase;
+
+     letter-spacing: 0.04em;
+}
+
+.static-page-detail-meta-item strong {
+     color: #344054;
+
+     font-size: 14px;
+     font-weight: 600;
+}
+
+.static-page-detail-meta-item code {
+     width: fit-content;
+
+     padding: 4px 7px;
+
+     border: 1px solid #e5e7eb;
+     border-radius: 5px;
+
+     background: #f8fafc;
+
+     color: #667085;
+
+     font-family:
+          "SFMono-Regular",
+          Consolas,
+          "Liberation Mono",
+          monospace;
+
+     font-size: 11px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.static-page-detail-status {
+     display: inline-flex;
+
+     align-items: center;
+
+     gap: 6px;
+
+     width: fit-content;
+
+     padding: 5px 9px;
+
+     border-radius: 20px;
+
+     font-size: 11px;
+     font-weight: 600;
+}
+
+.static-page-detail-status.active {
+     background: #ecfdf3;
+
+     color: #15803d;
+}
+
+.static-page-detail-status.inactive {
+     background: #f2f4f7;
+
+     color: #667085;
+}
+
+.static-page-detail-status-dot {
+     width: 6px;
+     height: 6px;
+
+     border-radius: 50%;
+
+     background: currentColor;
+}
+
+
+/* =========================================================
+   CONTENT SECTION
+========================================================= */
+
+.static-page-detail-content-section {
+     padding: 28px 30px;
+}
+
+.static-page-detail-content-heading {
+     margin-bottom: 18px;
+}
+
+.static-page-detail-content-heading h3 {
+     margin: 0;
+
+     color: #1b2435;
+
+     font-size: 17px;
+     font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.static-page-detail-content {
+     color: #344054;
+
+     font-size: 14px;
+
+     line-height: 1.8;
+
+     word-break: break-word;
+}
+
+
+/* =========================================================
+   CONTENT ELEMENTS
+========================================================= */
+
+.static-page-detail-content h1,
+.static-page-detail-content h2,
+.static-page-detail-content h3,
+.static-page-detail-content h4,
+.static-page-detail-content h5,
+.static-page-detail-content h6 {
+     margin-top: 24px;
+     margin-bottom: 12px;
+
+     color: #172033;
+
+     line-height: 1.35;
+}
+
+.static-page-detail-content h1:first-child,
+.static-page-detail-content h2:first-child,
+.static-page-detail-content h3:first-child {
+     margin-top: 0;
+}
+
+.static-page-detail-content p {
+     margin: 0 0 14px;
+}
+
+.static-page-detail-content ul,
+.static-page-detail-content ol {
+     margin-top: 8px;
+     margin-bottom: 16px;
+
+     padding-left: 25px;
+}
+
+.static-page-detail-content li {
+     margin-bottom: 7px;
+}
+
+.static-page-detail-content a {
+     color: #2563eb;
+
+     text-decoration: underline;
+}
+
+.static-page-detail-content blockquote {
+     margin: 18px 0;
+
+     padding: 12px 18px;
+
+     border-left: 3px solid #2563eb;
+
+     background: #f8fafc;
+
+     color: #667085;
+}
+
+.static-page-detail-content img {
+     max-width: 100%;
+     height: auto;
+
+     border-radius: 7px;
+}
+
+.static-page-detail-content table {
+     width: 100%;
+
+     margin: 18px 0;
+
+     border-collapse: collapse;
+}
+
+.static-page-detail-content th,
+.static-page-detail-content td {
+     padding: 9px 12px;
+
+     border: 1px solid #e2e8f0;
+
+     text-align: left;
+}
+
+.static-page-detail-content th {
+     background: #f8fafc;
+
+     color: #344054;
+
+     font-weight: 600;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.static-page-detail-loading {
+     min-height: 360px;
+
+     display: flex;
+
+     flex-direction: column;
+
+     align-items: center;
+     justify-content: center;
+
+     padding: 40px;
+
+     border: 1px solid #e3e9f1;
+     border-radius: 10px;
+
+     background: #ffffff;
+
+     text-align: center;
+
+     box-shadow:
+          0 2px 7px rgba(15, 23, 42, 0.03);
+}
+
+.static-page-detail-loading .spinner-border {
+     width: 30px;
+     height: 30px;
+
+     margin-bottom: 15px;
+}
+
+.static-page-detail-loading h5 {
+     margin: 0;
+
+     color: #475467;
+
+     font-size: 15px;
+}
+
+.static-page-detail-loading p {
+     margin: 6px 0 0;
+
+     color: #98a2b3;
+
+     font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+     .static-page-detail {
+          padding: 24px 22px 30px;
+     }
+
+     .static-page-detail-meta {
+          grid-template-columns: 1fr 1fr;
+     }
+
+     .static-page-detail-meta-item:last-child {
+          grid-column: span 2;
+
+          border-top: 1px solid #edf0f4;
+          border-right: 0;
+     }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+     .static-page-detail {
+          padding: 20px 15px 25px;
+     }
+
+     .static-page-detail-header {
+          align-items: flex-start;
+
+          flex-wrap: wrap;
+     }
+
+     .static-page-detail-heading {
+          min-width: 0;
+     }
+
+     .static-page-detail-header h1 {
+          font-size: 23px;
+     }
+
+     .static-page-detail-edit-btn {
+          width: 100%;
+
+          margin-left: 52px;
+     }
+
+     .static-page-detail-meta {
+          grid-template-columns: 1fr;
+     }
+
+     .static-page-detail-meta-item {
+          border-right: 0;
+
+          border-bottom: 1px solid #edf0f4;
+     }
+
+     .static-page-detail-meta-item:last-child {
+          grid-column: auto;
+
+          border-top: 0;
+          border-bottom: 0;
+     }
+
+     .static-page-detail-content-section {
+          padding: 22px 18px;
+     }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+     .static-page-detail {
+          padding: 18px 12px 22px;
+     }
+
+     .static-page-detail-header h1 {
+          font-size: 21px;
+     }
+
+     .static-page-detail-header p {
+          font-size: 12px;
+     }
+
+     .static-page-detail-content {
+          font-size: 13px;
+     }
+}

@@ -1,0 +1,684 @@
+/* =========================================================
+   ADD STATIC PAGE
+========================================================= */
+
+.add-static-page {
+     width: 100%;
+     padding: 28px 30px 35px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.add-static-page-header {
+     display: flex;
+     align-items: center;
+     gap: 14px;
+
+     margin-bottom: 24px;
+}
+
+.add-static-page-header h1 {
+     margin: 0;
+
+     color: #172033;
+
+     font-size: 28px;
+     font-weight: 700;
+
+     line-height: 1.2;
+}
+
+.add-static-page-header p {
+     margin: 7px 0 0;
+
+     color: #7c8497;
+
+     font-size: 14px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.add-static-page-back-btn {
+     width: 40px;
+     height: 40px;
+
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+
+     flex-shrink: 0;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 8px;
+
+     background: #ffffff;
+
+     color: #4b5568;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+}
+
+.add-static-page-back-btn svg {
+     width: 18px;
+     height: 18px;
+}
+
+.add-static-page-back-btn:hover {
+     background: #f8fafc;
+
+     border-color: #cbd5e1;
+
+     color: #2563eb;
+
+     transform: translateX(-1px);
+}
+
+
+/* =========================================================
+   MAIN FORM CARD
+========================================================= */
+
+.add-static-page-card {
+     width: 100%;
+
+     border: 1px solid #e3e9f1;
+     border-radius: 10px;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 2px 7px rgba(15, 23, 42, 0.03);
+
+     overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.add-static-page-section {
+     padding: 28px 30px;
+}
+
+.add-static-page-section+.add-static-page-section {
+     border-top: 1px solid #edf0f4;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.add-static-page-section-heading {
+     margin-bottom: 22px;
+}
+
+.add-static-page-section-heading h3 {
+     margin: 0;
+
+     color: #1b2435;
+
+     font-size: 17px;
+     font-weight: 700;
+}
+
+.add-static-page-section-heading p {
+     margin: 5px 0 0;
+
+     color: #8992a3;
+
+     font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.add-static-page-grid {
+     display: grid;
+
+     grid-template-columns:
+          minmax(0, 1fr) minmax(0, 1fr);
+
+     gap: 24px;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.add-static-page-field {
+     min-width: 0;
+}
+
+.add-static-page-field label,
+.add-static-page-editor>label {
+     display: block;
+
+     margin-bottom: 8px;
+
+     color: #344054;
+
+     font-size: 13px;
+     font-weight: 600;
+}
+
+.add-static-page-field label span,
+.add-static-page-editor>label span {
+     margin-left: 3px;
+
+     color: #dc2626;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.add-static-page-field input {
+     width: 100%;
+     height: 44px;
+
+     padding: 0 13px;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 7px;
+
+     outline: none;
+
+     background: #ffffff;
+
+     color: #202737;
+
+     font-size: 13px;
+
+     transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.add-static-page-field input::placeholder {
+     color: #a0a7b4;
+}
+
+.add-static-page-field input:focus {
+     border-color: #2563eb;
+
+     box-shadow:
+          0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   FIELD HELP TEXT
+========================================================= */
+
+.add-static-page-field small {
+     display: block;
+
+     margin-top: 7px;
+
+     color: #98a2b3;
+
+     font-size: 11px;
+}
+
+
+/* =========================================================
+   RICH TEXT EDITOR
+========================================================= */
+
+.add-static-page-editor {
+     width: 100%;
+}
+
+
+/*
+   ReactQuill container
+*/
+
+.add-static-page-editor .ql-toolbar {
+     border: 1px solid #dfe4ec;
+
+     border-radius: 7px 7px 0 0;
+
+     background: #f8fafc;
+}
+
+.add-static-page-editor .ql-container {
+     min-height: 320px;
+
+     border: 1px solid #dfe4ec;
+     border-top: 0;
+
+     border-radius: 0 0 7px 7px;
+
+     background: #ffffff;
+
+     font-family: inherit;
+
+     font-size: 14px;
+}
+
+.add-static-page-editor .ql-editor {
+     min-height: 320px;
+
+     padding: 15px;
+
+     color: #344054;
+
+     line-height: 1.7;
+}
+
+.add-static-page-editor .ql-editor.ql-blank::before {
+     color: #a0a7b4;
+
+     font-style: normal;
+
+     left: 15px;
+}
+
+.add-static-page-editor .ql-toolbar button:hover,
+.add-static-page-editor .ql-toolbar button.ql-active {
+     color: #2563eb;
+}
+
+.add-static-page-editor .ql-toolbar .ql-stroke {
+     stroke: #667085;
+}
+
+.add-static-page-editor .ql-toolbar button:hover .ql-stroke,
+.add-static-page-editor .ql-toolbar button.ql-active .ql-stroke {
+     stroke: #2563eb;
+}
+
+.add-static-page-editor .ql-toolbar .ql-fill {
+     fill: #667085;
+}
+
+.add-static-page-editor .ql-toolbar button:hover .ql-fill,
+.add-static-page-editor .ql-toolbar button.ql-active .ql-fill {
+     fill: #2563eb;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.add-static-page-status-row {
+     display: flex;
+
+     align-items: center;
+     justify-content: space-between;
+
+     gap: 20px;
+}
+
+.add-static-page-status-row h4 {
+     margin: 0;
+
+     color: #344054;
+
+     font-size: 14px;
+     font-weight: 600;
+}
+
+.add-static-page-status-row p {
+     margin: 5px 0 0;
+
+     color: #98a2b3;
+
+     font-size: 12px;
+}
+
+.add-static-page-status-control {
+     display: flex;
+
+     align-items: center;
+
+     gap: 11px;
+}
+
+
+/* =========================================================
+   STATUS SWITCH
+========================================================= */
+
+.add-static-page-switch {
+     position: relative;
+
+     width: 46px;
+     height: 25px;
+
+     display: inline-block;
+
+     flex-shrink: 0;
+
+     cursor: pointer;
+}
+
+.add-static-page-switch input {
+     width: 0;
+     height: 0;
+
+     opacity: 0;
+}
+
+.add-static-page-slider {
+     position: absolute;
+
+     inset: 0;
+
+     border-radius: 30px;
+
+     background: #d6dce5;
+
+     transition: background 0.2s ease;
+}
+
+.add-static-page-slider::before {
+     content: "";
+
+     position: absolute;
+
+     width: 19px;
+     height: 19px;
+
+     top: 3px;
+     left: 3px;
+
+     border-radius: 50%;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 1px 3px rgba(15, 23, 42, 0.18);
+
+     transition:
+          transform 0.2s ease;
+}
+
+.add-static-page-switch input:checked+.add-static-page-slider {
+     background: #2563eb;
+}
+
+.add-static-page-switch input:checked+.add-static-page-slider::before {
+     transform: translateX(21px);
+}
+
+
+/* =========================================================
+   STATUS TEXT
+========================================================= */
+
+.add-static-page-status {
+     font-size: 12px;
+     font-weight: 600;
+}
+
+.add-static-page-status.active {
+     color: #15803d;
+}
+
+.add-static-page-status.inactive {
+     color: #98a2b3;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.add-static-page-actions {
+     display: flex;
+
+     align-items: center;
+     justify-content: flex-end;
+
+     gap: 10px;
+
+     padding: 20px 30px;
+
+     border-top: 1px solid #edf0f4;
+
+     background: #ffffff;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.add-static-page-cancel-btn {
+     min-width: 90px;
+     height: 40px;
+
+     padding: 0 16px;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 7px;
+
+     background: #ffffff;
+
+     color: #596579;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+}
+
+.add-static-page-cancel-btn:hover:not(:disabled) {
+     background: #f8fafc;
+
+     border-color: #cbd5e1;
+
+     color: #344054;
+}
+
+.add-static-page-cancel-btn:disabled {
+     opacity: 0.6;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CREATE BUTTON
+========================================================= */
+
+.add-static-page-save-btn {
+     min-width: 130px;
+     height: 40px;
+
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     gap: 7px;
+
+     padding: 0 17px;
+
+     border: 0;
+     border-radius: 7px;
+
+     background: #2563eb;
+
+     color: #ffffff;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.add-static-page-save-btn svg {
+     width: 16px;
+     height: 16px;
+}
+
+.add-static-page-save-btn:hover:not(:disabled) {
+     background: #1d4ed8;
+
+     transform: translateY(-1px);
+
+     box-shadow:
+          0 5px 14px rgba(37, 99, 235, 0.18);
+}
+
+.add-static-page-save-btn:active:not(:disabled) {
+     transform: translateY(0);
+}
+
+.add-static-page-save-btn:disabled {
+     opacity: 0.65;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+     .add-static-page {
+          padding: 24px 22px 30px;
+     }
+
+     .add-static-page-section {
+          padding: 25px;
+     }
+
+     .add-static-page-actions {
+          padding: 18px 25px;
+     }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+     .add-static-page {
+          padding: 20px 15px 25px;
+     }
+
+     .add-static-page-header {
+          gap: 10px;
+
+          margin-bottom: 20px;
+     }
+
+     .add-static-page-header h1 {
+          font-size: 24px;
+     }
+
+     .add-static-page-header p {
+          font-size: 13px;
+     }
+
+     .add-static-page-section {
+          padding: 20px 18px;
+     }
+
+     .add-static-page-grid {
+          grid-template-columns: 1fr;
+
+          gap: 18px;
+     }
+
+     .add-static-page-section-heading {
+          margin-bottom: 18px;
+     }
+
+     .add-static-page-editor .ql-container,
+     .add-static-page-editor .ql-editor {
+          min-height: 250px;
+     }
+
+     .add-static-page-status-row {
+          align-items: flex-start;
+
+          flex-direction: column;
+
+          gap: 15px;
+     }
+
+     .add-static-page-actions {
+          padding: 18px;
+
+          flex-direction: column-reverse;
+     }
+
+     .add-static-page-cancel-btn,
+     .add-static-page-save-btn {
+          width: 100%;
+     }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+     .add-static-page {
+          padding: 18px 12px 22px;
+     }
+
+     .add-static-page-header h1 {
+          font-size: 22px;
+     }
+
+     .add-static-page-header p {
+          font-size: 12px;
+     }
+
+     .add-static-page-section {
+          padding: 18px 15px;
+     }
+
+     .add-static-page-editor .ql-toolbar {
+          padding: 7px;
+     }
+
+     .add-static-page-editor .ql-container,
+     .add-static-page-editor .ql-editor {
+          min-height: 220px;
+     }
+
+}

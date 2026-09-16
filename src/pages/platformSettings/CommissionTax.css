@@ -1,0 +1,608 @@
+/* =========================================================
+   COMMISSION & TAX PAGE
+========================================================= */
+
+.commission-tax-page {
+     width: 100%;
+     padding: 28px 30px 35px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.commission-tax-header {
+     margin-bottom: 24px;
+}
+
+.commission-tax-header h1 {
+     margin: 0;
+
+     color: #172033;
+
+     font-size: 28px;
+     font-weight: 700;
+
+     line-height: 1.2;
+}
+
+.commission-tax-header p {
+     margin: 7px 0 0;
+
+     color: #7c8497;
+
+     font-size: 14px;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.commission-tax-card {
+     width: 100%;
+
+     border: 1px solid #e3e9f1;
+     border-radius: 10px;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 2px 7px rgba(15, 23, 42, 0.03);
+}
+
+
+/* =========================================================
+   SETTINGS SECTION
+========================================================= */
+
+.commission-tax-section {
+     padding: 28px 30px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.commission-tax-section-header {
+     display: flex;
+
+     align-items: center;
+
+     gap: 14px;
+
+     margin-bottom: 25px;
+}
+
+.commission-tax-icon {
+     width: 44px;
+     height: 44px;
+
+     display: flex;
+
+     align-items: center;
+     justify-content: center;
+
+     flex-shrink: 0;
+
+     border: 1px solid #dbe5f3;
+     border-radius: 9px;
+
+     background: #f5f9ff;
+
+     color: #2563eb;
+}
+
+.commission-tax-icon svg {
+     width: 20px;
+     height: 20px;
+}
+
+.commission-tax-section-header h3 {
+     margin: 0;
+
+     color: #1b2435;
+
+     font-size: 17px;
+     font-weight: 700;
+}
+
+.commission-tax-section-header p {
+     margin: 5px 0 0;
+
+     color: #8992a3;
+
+     font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.commission-tax-form-row {
+     display: grid;
+
+     grid-template-columns:
+          minmax(0, 1fr) minmax(0, 1fr);
+
+     gap: 28px;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.commission-tax-field,
+.commission-tax-status-field {
+     min-width: 0;
+}
+
+.commission-tax-field>label,
+.commission-tax-status-field>label {
+     display: block;
+
+     margin-bottom: 9px;
+
+     color: #344054;
+
+     font-size: 13px;
+     font-weight: 600;
+}
+
+
+/* =========================================================
+   NUMBER INPUT
+========================================================= */
+
+.commission-tax-input-wrapper {
+     position: relative;
+
+     width: 100%;
+}
+
+.commission-tax-input-wrapper input {
+     width: 100%;
+     height: 44px;
+
+     padding: 0 48px 0 13px;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 7px;
+
+     outline: none;
+
+     background: #ffffff;
+
+     color: #202737;
+
+     font-size: 13px;
+
+     transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.commission-tax-input-wrapper input::placeholder {
+     color: #a0a7b4;
+}
+
+.commission-tax-input-wrapper input:focus {
+     border-color: #2563eb;
+
+     box-shadow:
+          0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* Remove number arrows */
+
+.commission-tax-input-wrapper input::-webkit-outer-spin-button,
+.commission-tax-input-wrapper input::-webkit-inner-spin-button {
+     margin: 0;
+
+     -webkit-appearance: none;
+}
+
+.commission-tax-input-wrapper input[type="number"] {
+     -moz-appearance: textfield;
+}
+
+
+/* =========================================================
+   PERCENTAGE SUFFIX
+========================================================= */
+
+.commission-tax-input-wrapper>span {
+     position: absolute;
+
+     top: 50%;
+     right: 14px;
+
+     color: #667085;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     transform: translateY(-50%);
+
+     pointer-events: none;
+}
+
+
+/* =========================================================
+   FIELD HELP TEXT
+========================================================= */
+
+.commission-tax-field small {
+     display: block;
+
+     margin-top: 7px;
+
+     color: #98a2b3;
+
+     font-size: 11px;
+}
+
+
+/* =========================================================
+   STATUS FIELD
+========================================================= */
+
+.commission-tax-status-field {
+     display: flex;
+
+     flex-direction: column;
+}
+
+.commission-tax-toggle-row {
+     min-height: 44px;
+
+     display: flex;
+
+     align-items: center;
+
+     gap: 12px;
+}
+
+
+/* =========================================================
+   TOGGLE SWITCH
+========================================================= */
+
+.commission-tax-switch {
+     position: relative;
+
+     width: 46px;
+     height: 25px;
+
+     display: inline-block;
+
+     flex-shrink: 0;
+
+     cursor: pointer;
+}
+
+.commission-tax-switch input {
+     width: 0;
+     height: 0;
+
+     opacity: 0;
+}
+
+.commission-tax-slider {
+     position: absolute;
+
+     inset: 0;
+
+     border-radius: 30px;
+
+     background: #d6dce5;
+
+     transition:
+          background 0.2s ease;
+}
+
+.commission-tax-slider::before {
+     content: "";
+
+     position: absolute;
+
+     width: 19px;
+     height: 19px;
+
+     top: 3px;
+     left: 3px;
+
+     border-radius: 50%;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 1px 3px rgba(15, 23, 42, 0.18);
+
+     transition:
+          transform 0.2s ease;
+}
+
+.commission-tax-switch input:checked+.commission-tax-slider {
+     background: #2563eb;
+}
+
+.commission-tax-switch input:checked+.commission-tax-slider::before {
+     transform: translateX(21px);
+}
+
+
+/* =========================================================
+   STATUS TEXT
+========================================================= */
+
+.commission-tax-status {
+     font-size: 12px;
+     font-weight: 600;
+}
+
+.commission-tax-status.active {
+     color: #15803d;
+}
+
+.commission-tax-status.inactive {
+     color: #98a2b3;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.commission-tax-divider {
+     width: 100%;
+
+     height: 1px;
+
+     background: #edf0f4;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.commission-tax-actions {
+     display: flex;
+
+     align-items: center;
+     justify-content: flex-end;
+
+     padding: 20px 30px;
+
+     border-top: 1px solid #edf0f4;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.commission-tax-save-btn {
+     min-width: 145px;
+     height: 40px;
+
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     gap: 7px;
+
+     padding: 0 17px;
+
+     border: 0;
+     border-radius: 7px;
+
+     background: #2563eb;
+
+     color: #ffffff;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.commission-tax-save-btn svg {
+     width: 16px;
+     height: 16px;
+}
+
+.commission-tax-save-btn:hover:not(:disabled) {
+     background: #1d4ed8;
+
+     transform: translateY(-1px);
+
+     box-shadow:
+          0 5px 14px rgba(37, 99, 235, 0.18);
+}
+
+.commission-tax-save-btn:active:not(:disabled) {
+     transform: translateY(0);
+}
+
+.commission-tax-save-btn:disabled {
+     opacity: 0.65;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.commission-tax-loading {
+     min-height: 350px;
+
+     display: flex;
+
+     flex-direction: column;
+
+     align-items: center;
+     justify-content: center;
+
+     padding: 40px;
+
+     border: 1px solid #e3e9f1;
+     border-radius: 10px;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 2px 7px rgba(15, 23, 42, 0.03);
+
+     text-align: center;
+}
+
+.commission-tax-loading .spinner-border {
+     width: 30px;
+     height: 30px;
+
+     margin-bottom: 15px;
+}
+
+.commission-tax-loading h5 {
+     margin: 0;
+
+     color: #475467;
+
+     font-size: 15px;
+     font-weight: 600;
+}
+
+.commission-tax-loading p {
+     margin: 6px 0 0;
+
+     color: #98a2b3;
+
+     font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+     .commission-tax-page {
+          padding: 24px 22px 30px;
+     }
+
+     .commission-tax-section {
+          padding: 25px;
+     }
+
+     .commission-tax-actions {
+          padding: 18px 25px;
+     }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+     .commission-tax-page {
+          padding: 20px 15px 25px;
+     }
+
+     .commission-tax-header {
+          margin-bottom: 20px;
+     }
+
+     .commission-tax-header h1 {
+          font-size: 24px;
+     }
+
+     .commission-tax-header p {
+          font-size: 13px;
+     }
+
+     .commission-tax-section {
+          padding: 20px 18px;
+     }
+
+     .commission-tax-form-row {
+          grid-template-columns: 1fr;
+
+          gap: 22px;
+     }
+
+     .commission-tax-section-header {
+          align-items: flex-start;
+
+          margin-bottom: 20px;
+     }
+
+     .commission-tax-icon {
+          width: 40px;
+          height: 40px;
+     }
+
+     .commission-tax-section-header h3 {
+          font-size: 16px;
+     }
+
+     .commission-tax-actions {
+          padding: 18px;
+     }
+
+     .commission-tax-save-btn {
+          width: 100%;
+     }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+     .commission-tax-page {
+          padding: 18px 12px 22px;
+     }
+
+     .commission-tax-section {
+          padding: 18px 15px;
+     }
+
+     .commission-tax-header h1 {
+          font-size: 22px;
+     }
+
+     .commission-tax-header p {
+          font-size: 12px;
+     }
+
+     .commission-tax-section-header {
+          gap: 10px;
+     }
+
+     .commission-tax-section-header p {
+          font-size: 12px;
+     }
+
+}

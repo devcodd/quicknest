@@ -1,0 +1,807 @@
+/* =========================================================
+   STATIC PAGE LIST
+========================================================= */
+
+.static-page-list {
+     width: 100%;
+     padding: 28px 30px 35px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.static-page-list-header {
+     display: flex;
+
+     align-items: center;
+     justify-content: space-between;
+
+     gap: 20px;
+
+     margin-bottom: 24px;
+}
+
+.static-page-list-header h1 {
+     margin: 0;
+
+     color: #172033;
+
+     font-size: 28px;
+     font-weight: 700;
+
+     line-height: 1.2;
+}
+
+.static-page-list-header p {
+     margin: 7px 0 0;
+
+     color: #7c8497;
+
+     font-size: 14px;
+}
+
+
+/* =========================================================
+   ADD PAGE BUTTON
+========================================================= */
+
+.static-page-add-btn {
+     height: 40px;
+
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     gap: 7px;
+
+     flex-shrink: 0;
+
+     padding: 0 16px;
+
+     border: 0;
+     border-radius: 7px;
+
+     background: #2563eb;
+
+     color: #ffffff;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.static-page-add-btn svg {
+     width: 16px;
+     height: 16px;
+}
+
+.static-page-add-btn:hover {
+     background: #1d4ed8;
+
+     transform: translateY(-1px);
+
+     box-shadow:
+          0 5px 14px rgba(37, 99, 235, 0.18);
+}
+
+.static-page-add-btn:active {
+     transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.static-page-table-card {
+     width: 100%;
+
+     overflow: hidden;
+
+     border: 1px solid #e3e9f1;
+     border-radius: 10px;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 2px 7px rgba(15, 23, 42, 0.03);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.static-page-table-header {
+     display: flex;
+
+     align-items: center;
+     justify-content: space-between;
+
+     padding: 20px 22px;
+
+     border-bottom: 1px solid #edf0f4;
+}
+
+.static-page-table-title {
+     display: flex;
+
+     align-items: center;
+
+     gap: 12px;
+}
+
+
+/* =========================================================
+   TABLE ICON
+========================================================= */
+
+.static-page-table-icon {
+     width: 40px;
+     height: 40px;
+
+     display: flex;
+
+     align-items: center;
+     justify-content: center;
+
+     flex-shrink: 0;
+
+     border: 1px solid #dbe5f3;
+     border-radius: 8px;
+
+     background: #f5f9ff;
+
+     color: #2563eb;
+}
+
+.static-page-table-icon svg {
+     width: 18px;
+     height: 18px;
+}
+
+
+/* =========================================================
+   TABLE TITLE
+========================================================= */
+
+.static-page-table-title h3 {
+     margin: 0;
+
+     color: #1b2435;
+
+     font-size: 16px;
+     font-weight: 700;
+}
+
+.static-page-table-title p {
+     margin: 4px 0 0;
+
+     color: #98a2b3;
+
+     font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.static-page-table-wrapper {
+     width: 100%;
+
+     overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.static-page-table {
+     width: 100%;
+
+     border-collapse: collapse;
+
+     min-width: 760px;
+}
+
+.static-page-table thead {
+     background: #f8fafc;
+}
+
+.static-page-table th {
+     height: 46px;
+
+     padding: 0 18px;
+
+     border-bottom: 1px solid #e8edf3;
+
+     color: #667085;
+
+     font-size: 11px;
+     font-weight: 700;
+
+     text-align: left;
+
+     text-transform: uppercase;
+
+     letter-spacing: 0.04em;
+
+     white-space: nowrap;
+}
+
+.static-page-table td {
+     height: 68px;
+
+     padding: 10px 18px;
+
+     border-bottom: 1px solid #edf0f4;
+
+     color: #475467;
+
+     font-size: 13px;
+
+     vertical-align: middle;
+}
+
+.static-page-table tbody tr {
+     transition:
+          background 0.15s ease;
+}
+
+.static-page-table tbody tr:hover {
+     background: #fafcff;
+}
+
+.static-page-table tbody tr:last-child td {
+     border-bottom: 0;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.static-page-number {
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     width: 28px;
+     height: 28px;
+
+     border-radius: 6px;
+
+     background: #f4f6f8;
+
+     color: #667085;
+
+     font-size: 11px;
+     font-weight: 600;
+}
+
+
+/* =========================================================
+   TITLE CELL
+========================================================= */
+
+.static-page-title-cell {
+     display: flex;
+
+     align-items: center;
+
+     gap: 10px;
+
+     min-width: 220px;
+}
+
+.static-page-title-icon {
+     width: 34px;
+     height: 34px;
+
+     display: flex;
+
+     align-items: center;
+     justify-content: center;
+
+     flex-shrink: 0;
+
+     border: 1px solid #e2e8f0;
+     border-radius: 7px;
+
+     background: #f8fafc;
+
+     color: #64748b;
+}
+
+.static-page-title-icon svg {
+     width: 16px;
+     height: 16px;
+}
+
+.static-page-title-cell strong {
+     display: block;
+
+     color: #344054;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     white-space: nowrap;
+}
+
+
+/* =========================================================
+   SLUG
+========================================================= */
+
+.static-page-slug {
+     display: inline-block;
+
+     max-width: 260px;
+
+     padding: 5px 8px;
+
+     overflow: hidden;
+
+     border: 1px solid #e5e7eb;
+     border-radius: 5px;
+
+     background: #f8fafc;
+
+     color: #667085;
+
+     font-family:
+          "SFMono-Regular",
+          Consolas,
+          "Liberation Mono",
+          monospace;
+
+     font-size: 11px;
+
+     text-overflow: ellipsis;
+
+     white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.static-page-status {
+     display: inline-flex;
+
+     align-items: center;
+
+     gap: 6px;
+
+     padding: 5px 9px;
+
+     border-radius: 20px;
+
+     font-size: 11px;
+     font-weight: 600;
+
+     white-space: nowrap;
+}
+
+.static-page-status.active {
+     background: #ecfdf3;
+
+     color: #15803d;
+}
+
+.static-page-status.inactive {
+     background: #f2f4f7;
+
+     color: #667085;
+}
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
+
+.static-page-status-dot {
+     width: 6px;
+     height: 6px;
+
+     border-radius: 50%;
+
+     background: currentColor;
+}
+
+
+/* =========================================================
+   ACTION COLUMN
+========================================================= */
+
+.static-page-actions-column {
+     width: 110px;
+
+     text-align: center !important;
+}
+
+.static-page-actions {
+     display: flex;
+
+     align-items: center;
+     justify-content: center;
+
+     gap: 7px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.static-page-edit-btn,
+.static-page-delete-btn {
+     width: 32px;
+     height: 32px;
+
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     border-radius: 6px;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+}
+
+.static-page-edit-btn svg,
+.static-page-delete-btn svg {
+     width: 15px;
+     height: 15px;
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+.static-page-edit-btn {
+     border: 1px solid #dbe5f3;
+
+     background: #f5f9ff;
+
+     color: #2563eb;
+}
+
+.static-page-edit-btn:hover {
+     border-color: #bfdbfe;
+
+     background: #eff6ff;
+
+     color: #1d4ed8;
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.static-page-delete-btn {
+     border: 1px solid #fee2e2;
+
+     background: #fff7f7;
+
+     color: #dc2626;
+}
+
+.static-page-delete-btn:hover:not(:disabled) {
+     border-color: #fecaca;
+
+     background: #fef2f2;
+
+     color: #b91c1c;
+}
+
+.static-page-delete-btn:disabled {
+     opacity: 0.55;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.static-page-empty {
+     min-height: 360px;
+
+     display: flex;
+
+     flex-direction: column;
+
+     align-items: center;
+     justify-content: center;
+
+     padding: 45px 20px;
+
+     text-align: center;
+}
+
+.static-page-empty-icon {
+     width: 58px;
+     height: 58px;
+
+     display: flex;
+
+     align-items: center;
+     justify-content: center;
+
+     margin-bottom: 16px;
+
+     border: 1px solid #dbe5f3;
+     border-radius: 12px;
+
+     background: #f5f9ff;
+
+     color: #2563eb;
+}
+
+.static-page-empty-icon svg {
+     width: 25px;
+     height: 25px;
+}
+
+.static-page-empty h4 {
+     margin: 0;
+
+     color: #344054;
+
+     font-size: 16px;
+     font-weight: 700;
+}
+
+.static-page-empty p {
+     margin: 7px 0 20px;
+
+     color: #98a2b3;
+
+     font-size: 13px;
+}
+
+
+/* =========================================================
+   EMPTY STATE BUTTON
+========================================================= */
+
+.static-page-empty-btn {
+     height: 38px;
+
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     gap: 7px;
+
+     padding: 0 15px;
+
+     border: 0;
+     border-radius: 7px;
+
+     background: #2563eb;
+
+     color: #ffffff;
+
+     font-size: 12px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+}
+
+.static-page-empty-btn svg {
+     width: 15px;
+     height: 15px;
+}
+
+.static-page-empty-btn:hover {
+     background: #1d4ed8;
+
+     transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.static-page-loading {
+     min-height: 360px;
+
+     display: flex;
+
+     flex-direction: column;
+
+     align-items: center;
+     justify-content: center;
+
+     padding: 40px;
+
+     border: 1px solid #e3e9f1;
+     border-radius: 10px;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 2px 7px rgba(15, 23, 42, 0.03);
+
+     text-align: center;
+}
+
+.static-page-loading .spinner-border {
+     width: 30px;
+     height: 30px;
+
+     margin-bottom: 15px;
+}
+
+.static-page-loading h5 {
+     margin: 0;
+
+     color: #475467;
+
+     font-size: 15px;
+     font-weight: 600;
+}
+
+.static-page-loading p {
+     margin: 6px 0 0;
+
+     color: #98a2b3;
+
+     font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+     .static-page-list {
+          padding: 24px 22px 30px;
+     }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+     .static-page-list {
+          padding: 20px 15px 25px;
+     }
+
+     .static-page-list-header {
+          align-items: flex-start;
+
+          flex-direction: column;
+
+          margin-bottom: 20px;
+     }
+
+     .static-page-list-header h1 {
+          font-size: 24px;
+     }
+
+     .static-page-list-header p {
+          font-size: 13px;
+     }
+
+     .static-page-add-btn {
+          width: 100%;
+     }
+
+     .static-page-table-header {
+          padding: 17px 18px;
+     }
+
+     .static-page-empty {
+          min-height: 320px;
+
+          padding: 35px 18px;
+     }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+     .static-page-list {
+          padding: 18px 12px 22px;
+     }
+
+     .static-page-list-header h1 {
+          font-size: 22px;
+     }
+
+     .static-page-list-header p {
+          font-size: 12px;
+     }
+
+     .static-page-table-title h3 {
+          font-size: 15px;
+     }
+
+     .static-page-table-title p {
+          font-size: 11px;
+     }
+
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.static-page-view-btn {
+     width: 32px;
+     height: 32px;
+
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+
+     border: 1px solid #e0e7ff;
+     border-radius: 6px;
+
+     background: #f5f7ff;
+
+     color: #4f46e5;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+}
+
+.static-page-view-btn svg {
+     width: 15px;
+     height: 15px;
+}
+
+.static-page-view-btn:hover {
+     border-color: #c7d2fe;
+
+     background: #eef2ff;
+
+     color: #4338ca;
+}

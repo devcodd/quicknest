@@ -1,0 +1,718 @@
+/* =========================================================
+   ADD BANNER PAGE
+========================================================= */
+
+.add-banner-page {
+     width: 100%;
+     padding: 28px 30px 35px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.add-banner-header {
+     display: flex;
+     align-items: center;
+     gap: 14px;
+
+     margin-bottom: 28px;
+}
+
+.add-banner-header h1 {
+     margin: 0;
+
+     color: #172033;
+
+     font-size: 28px;
+     font-weight: 700;
+
+     line-height: 1.2;
+}
+
+.add-banner-header p {
+     margin: 7px 0 0;
+
+     color: #7c8497;
+
+     font-size: 14px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-banner-btn {
+     width: 40px;
+     height: 40px;
+
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+
+     flex-shrink: 0;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 8px;
+
+     background: #ffffff;
+
+     color: #4b5568;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+}
+
+.back-banner-btn svg {
+     width: 18px;
+     height: 18px;
+}
+
+.back-banner-btn:hover {
+     background: #f5f8fc;
+
+     border-color: #cbd5e1;
+
+     color: #2563eb;
+
+     transform: translateX(-1px);
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.banner-form-card {
+     width: 100%;
+
+     padding: 28px;
+
+     background: #ffffff;
+
+     border: 1px solid #e8ecf2;
+     border-radius: 12px;
+
+     box-shadow:
+          0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.banner-form-section {
+     padding-bottom: 22px;
+
+     margin-bottom: 25px;
+
+     border-bottom: 1px solid #edf0f4;
+}
+
+.banner-form-section h3 {
+     margin: 0;
+
+     color: #1b2435;
+
+     font-size: 18px;
+     font-weight: 700;
+}
+
+.banner-form-section p {
+     margin: 6px 0 0;
+
+     color: #8992a3;
+
+     font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM LABEL
+========================================================= */
+
+.banner-form-label {
+     display: block;
+
+     margin-bottom: 8px;
+
+     color: #354052;
+
+     font-size: 13px;
+     font-weight: 600;
+}
+
+.banner-form-label span {
+     margin-left: 3px;
+
+     color: #dc2626;
+}
+
+
+/* =========================================================
+   TEXT INPUT
+========================================================= */
+
+.banner-form-input {
+     width: 100%;
+     height: 44px;
+
+     padding: 0 13px;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 7px;
+
+     outline: none;
+
+     background: #ffffff;
+
+     color: #202737;
+
+     font-size: 14px;
+
+     transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.banner-form-input::placeholder {
+     color: #a0a7b4;
+}
+
+.banner-form-input:focus {
+     border-color: #2563eb;
+
+     box-shadow:
+          0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.banner-form-input.error {
+     border-color: #ef4444;
+}
+
+.banner-form-input:disabled {
+     background: #f8fafc;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.banner-error {
+     display: block;
+
+     margin-top: 6px;
+
+     color: #dc2626;
+
+     font-size: 12px;
+}
+
+
+/* =========================================================
+   UPLOAD BOX
+========================================================= */
+
+.banner-upload-box {
+     width: 100%;
+     min-height: 250px;
+
+     display: flex;
+
+     flex-direction: column;
+
+     align-items: center;
+     justify-content: center;
+
+     padding: 35px 25px;
+
+     border: 2px dashed #d6dde8;
+     border-radius: 10px;
+
+     background: #fafbfc;
+
+     color: #64748b;
+
+     cursor: pointer;
+
+     text-align: center;
+
+     transition:
+          border-color 0.2s ease,
+          background 0.2s ease;
+}
+
+.banner-upload-box:hover {
+     border-color: #2563eb;
+
+     background: #f8fbff;
+}
+
+.banner-upload-box svg {
+     width: 38px;
+     height: 38px;
+
+     margin-bottom: 14px;
+
+     color: #2563eb;
+
+     stroke-width: 1.6;
+}
+
+.banner-upload-box strong {
+     color: #3d485a;
+
+     font-size: 14px;
+     font-weight: 600;
+}
+
+.banner-upload-box span {
+     margin-top: 6px;
+
+     color: #919aaa;
+
+     font-size: 12px;
+}
+
+.banner-upload-box input {
+     display: none;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+.banner-image-preview {
+     position: relative;
+
+     width: 100%;
+
+     overflow: hidden;
+
+     border: 1px solid #e2e7ef;
+     border-radius: 10px;
+
+     background: #f4f6f9;
+
+     aspect-ratio: 16 / 7;
+}
+
+.banner-image-preview img {
+     width: 100%;
+     height: 100%;
+
+     display: block;
+
+     object-fit: cover;
+}
+
+
+/* =========================================================
+   REMOVE IMAGE
+========================================================= */
+
+.remove-banner-image {
+     position: absolute;
+
+     top: 12px;
+     right: 12px;
+
+     width: 34px;
+     height: 34px;
+
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     border: 0;
+     border-radius: 50%;
+
+     background: rgba(255, 255, 255, 0.95);
+
+     color: #dc2626;
+
+     box-shadow:
+          0 3px 10px rgba(15, 23, 42, 0.14);
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+}
+
+.remove-banner-image svg {
+     width: 17px;
+     height: 17px;
+}
+
+.remove-banner-image:hover {
+     background: #ffffff;
+
+     transform: scale(1.05);
+}
+
+.remove-banner-image:disabled {
+     opacity: 0.6;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ACTIVE STATUS BOX
+========================================================= */
+
+.banner-active-box {
+     min-height: 70px;
+
+     display: flex;
+
+     align-items: center;
+     justify-content: space-between;
+
+     gap: 20px;
+
+     padding: 14px 16px;
+
+     border: 1px solid #e1e6ee;
+     border-radius: 8px;
+
+     background: #fafbfc;
+}
+
+.banner-active-box>div {
+     display: flex;
+
+     flex-direction: column;
+
+     gap: 4px;
+}
+
+.banner-active-box strong {
+     color: #344054;
+
+     font-size: 13px;
+     font-weight: 600;
+}
+
+.banner-active-box span {
+     color: #8a93a3;
+
+     font-size: 12px;
+}
+
+
+/* =========================================================
+   STATUS SWITCH
+========================================================= */
+
+.banner-status-switch {
+     position: relative;
+
+     display: inline-block;
+
+     width: 42px;
+     height: 23px;
+
+     flex-shrink: 0;
+}
+
+.banner-status-switch input {
+     width: 0;
+     height: 0;
+
+     opacity: 0;
+}
+
+.banner-status-slider {
+     position: absolute;
+
+     inset: 0;
+
+     border-radius: 30px;
+
+     background: #cbd2dc;
+
+     cursor: pointer;
+
+     transition: background 0.2s ease;
+}
+
+.banner-status-slider::before {
+     content: "";
+
+     position: absolute;
+
+     width: 17px;
+     height: 17px;
+
+     left: 3px;
+     top: 3px;
+
+     border-radius: 50%;
+
+     background: #ffffff;
+
+     box-shadow:
+          0 1px 4px rgba(0, 0, 0, 0.18);
+
+     transition: transform 0.2s ease;
+}
+
+.banner-status-switch input:checked+.banner-status-slider {
+     background: #22c55e;
+}
+
+.banner-status-switch input:checked+.banner-status-slider::before {
+     transform: translateX(19px);
+}
+
+.banner-status-switch input:disabled+.banner-status-slider {
+     opacity: 0.6;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.banner-form-actions {
+     display: flex;
+
+     align-items: center;
+     justify-content: flex-end;
+
+     gap: 10px;
+
+     margin-top: 30px;
+
+     padding-top: 22px;
+
+     border-top: 1px solid #edf0f4;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.banner-cancel-btn {
+     min-width: 100px;
+     height: 40px;
+
+     padding: 0 17px;
+
+     border: 1px solid #dfe4ec;
+     border-radius: 7px;
+
+     background: #ffffff;
+
+     color: #596579;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+}
+
+.banner-cancel-btn:hover {
+     background: #f8fafc;
+
+     border-color: #cbd5e1;
+
+     color: #273144;
+}
+
+.banner-cancel-btn:disabled {
+     opacity: 0.6;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.banner-save-btn {
+     min-width: 135px;
+     height: 40px;
+
+     display: inline-flex;
+
+     align-items: center;
+     justify-content: center;
+
+     gap: 7px;
+
+     padding: 0 17px;
+
+     border: 0;
+     border-radius: 7px;
+
+     background: #2563eb;
+
+     color: #ffffff;
+
+     font-size: 13px;
+     font-weight: 600;
+
+     cursor: pointer;
+
+     transition:
+          background 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.banner-save-btn svg {
+     width: 16px;
+     height: 16px;
+}
+
+.banner-save-btn:hover:not(:disabled) {
+     background: #1d4ed8;
+
+     transform: translateY(-1px);
+
+     box-shadow:
+          0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+.banner-save-btn:active:not(:disabled) {
+     transform: translateY(0);
+}
+
+.banner-save-btn:disabled {
+     opacity: 0.7;
+
+     cursor: not-allowed;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+     .add-banner-page {
+          padding: 24px 22px 30px;
+     }
+
+     .banner-form-card {
+          padding: 24px;
+     }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+     .add-banner-page {
+          padding: 20px 15px 25px;
+     }
+
+     .add-banner-header {
+          margin-bottom: 20px;
+     }
+
+     .add-banner-header h1 {
+          font-size: 24px;
+     }
+
+     .add-banner-header p {
+          font-size: 13px;
+     }
+
+     .back-banner-btn {
+          width: 38px;
+          height: 38px;
+     }
+
+     .banner-form-card {
+          padding: 18px;
+     }
+
+     .banner-form-section {
+          padding-bottom: 18px;
+
+          margin-bottom: 20px;
+     }
+
+     .banner-form-section h3 {
+          font-size: 16px;
+     }
+
+     .banner-upload-box {
+          min-height: 210px;
+
+          padding: 25px 18px;
+     }
+
+     .banner-image-preview {
+          aspect-ratio: 16 / 9;
+     }
+
+     .banner-form-actions {
+          flex-direction: column-reverse;
+
+          align-items: stretch;
+     }
+
+     .banner-cancel-btn,
+     .banner-save-btn {
+          width: 100%;
+     }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+     .add-banner-header {
+          gap: 10px;
+     }
+
+     .add-banner-header h1 {
+          font-size: 22px;
+     }
+
+     .banner-form-card {
+          padding: 15px;
+     }
+
+     .banner-active-box {
+          padding: 12px;
+     }
+
+}

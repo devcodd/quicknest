@@ -1,0 +1,68 @@
+/* =========================================================
+   GLOBAL TINYMCE EDITOR
+========================================================= */
+
+.tox.tox-tinymce {
+     width: 100% !important;
+
+     border: 1px solid #dfe4ec !important;
+
+     border-radius: 7px !important;
+
+     box-shadow: none !important;
+
+     overflow: hidden;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.tox .tox-toolbar,
+.tox .tox-toolbar__primary {
+     background: #f8fafc !important;
+}
+
+
+/* =========================================================
+   EDITOR AREA
+========================================================= */
+
+.tox .tox-edit-area {
+     background: #ffffff;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.tox.tox-tinymce:focus-within {
+     border-color: #2563eb !important;
+
+     box-shadow:
+          0 0 0 3px rgba(37, 99, 235, 0.08) !important;
+}
+
+
+/* =========================================================
+   STATUS BAR
+========================================================= */
+
+.tox .tox-statusbar {
+     background: #ffffff !important;
+
+     border-top: 1px solid #edf0f4 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+     .tox.tox-tinymce {
+          min-height: 350px;
+     }
+}
