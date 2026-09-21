@@ -11,6 +11,7 @@ import {
   FiDollarSign,
   FiPercent,
   FiFileText,
+  FiCreditCard,
 } from "react-icons/fi";
 import { FiHelpCircle } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -100,11 +101,9 @@ const Sidebar = ({ showLogo = true }) => {
             onClick={() => navigate("/dashboard/customers")}
           />
 
-          {/* Providers */}
           <SidebarItem
             icon={<FiUser />}
             label="Providers"
-            hasSubmenu
             active={location.pathname === "/dashboard/providers"}
             onClick={() => navigate("/dashboard/providers")}
           />
@@ -172,6 +171,12 @@ const Sidebar = ({ showLogo = true }) => {
             hasSubmenu
             active={location.pathname.startsWith("/dashboard/services")}
             onClick={() => navigate("/dashboard/services")}
+          />
+          <SidebarItem
+            icon={<FiCreditCard />}
+            label="Payment Gateway"
+            active={location.pathname === "/dashboard/payment-gateway"}
+            onClick={() => navigate("/dashboard/payment-gateway")}
           />
           <SidebarItem
             icon={<FiHelpCircle />}

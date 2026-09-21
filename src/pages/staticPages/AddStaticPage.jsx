@@ -18,6 +18,7 @@ const AddStaticPage = () => {
 
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
+  const [isSlugManuallyEdited, setIsSlugManuallyEdited] = useState(false);
   const [content, setContent] = useState("");
   const [isActive, setIsActive] = useState(true);
 
@@ -42,8 +43,8 @@ const AddStaticPage = () => {
     setTitle(value);
 
     // Automatically generate slug
-    // until the slug has been manually entered.
-    if (!slug) {
+    // until user manually edits the slug.
+    if (!isSlugManuallyEdited) {
       setSlug(generateSlug(value));
     }
   };
@@ -223,7 +224,10 @@ const AddStaticPage = () => {
                 id="pageSlug"
                 type="text"
                 value={slug}
-                onChange={(event) => setSlug(generateSlug(event.target.value))}
+                onChange={(event) => {
+                  setIsSlugManuallyEdited(true);
+                  setSlug(generateSlug(event.target.value));
+                }}
                 placeholder="e.g. terms-and-conditions"
               />
 
