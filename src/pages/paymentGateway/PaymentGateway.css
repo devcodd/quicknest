@@ -1,17 +1,16 @@
-/* ================================
-   Payment Gateway Page
-================================ */
+/* =========================================================
+   PAYMENT GATEWAY PAGE
+========================================================= */
 
 .payment-gateway-page {
-  width: 100%;
   min-height: 100%;
   padding: 24px;
-  background: #f6f8fb;
+  background: #f8fafc;
 }
 
-/* ================================
-   Header
-================================ */
+/* =========================================================
+   PAGE HEADER
+========================================================= */
 
 .payment-page-header {
   display: flex;
@@ -20,574 +19,812 @@
   margin-bottom: 24px;
 }
 
-.payment-page-header h2 {
-  margin: 0 0 6px;
+.payment-page-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0;
+
   color: #172033;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
 }
 
+.payment-page-header h1 svg {
+  color: #635bff;
+  font-size: 25px;
+}
+
 .payment-page-header p {
-  margin: 0;
-  color: #7b8496;
+  margin: 7px 0 0;
+
+  color: #64748b;
   font-size: 14px;
 }
 
-/* ================================
-   Gateway List
-================================ */
-
-.payment-gateway-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* ================================
-   Gateway Card
-================================ */
+/* =========================================================
+   MAIN CARD
+========================================================= */
 
 .payment-gateway-card {
   width: 100%;
+
+  overflow: hidden;
+
   background: #ffffff;
-  border: 1px solid #e7eaf0;
-  border-radius: 12px;
-  padding: 22px;
-  box-shadow: 0 2px 8px rgba(23, 32, 51, 0.04);
-  transition: 0.2s ease;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
 }
 
-.payment-gateway-card:hover {
-  border-color: #dce1ea;
-  box-shadow: 0 5px 16px rgba(23, 32, 51, 0.07);
-}
-
-.gateway-disabled {
-  background: #fbfcfd;
-}
-
-/* ================================
-   Gateway Header
-================================ */
+/* =========================================================
+   CARD HEADER
+========================================================= */
 
 .gateway-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+
+  padding: 22px 24px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e2e8f0;
 }
 
-.gateway-info {
+.gateway-title-section {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 15px;
 }
 
 .gateway-icon {
   width: 48px;
   height: 48px;
+
   flex-shrink: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 10px;
-  background: #eef5ff;
-  color: #2563eb;
-  font-size: 22px;
+  color: #ffffff;
+  background: #635bff;
+
+  border-radius: 12px;
+
+  font-size: 23px;
 }
 
-.gateway-info h3 {
-  margin: 0 0 5px;
-  color: #172033;
-  font-size: 17px;
-  font-weight: 650;
-}
-
-.gateway-info p {
+.gateway-title-section h2 {
   margin: 0;
-  color: #7b8496;
+
+  color: #172033;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.gateway-title-section p {
+  margin: 5px 0 0;
+
+  color: #64748b;
   font-size: 13px;
 }
 
-/* ================================
-   Toggle
-================================ */
+/* =========================================================
+   STATUS
+========================================================= */
+
+.gateway-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-label.active {
+  color: #16a34a;
+}
+
+.status-label.inactive {
+  color: #64748b;
+}
+
+/* =========================================================
+   ENABLE / DISABLE TOGGLE
+========================================================= */
 
 .gateway-toggle {
   position: relative;
-  display: inline-flex;
-  width: 46px;
-  height: 25px;
-  flex-shrink: 0;
-  cursor: pointer;
-}
 
-.gateway-toggle input {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+  width: 48px;
+  height: 26px;
 
-.toggle-slider {
-  position: absolute;
-  inset: 0;
-  background: #d7dce5;
+  padding: 0;
+
+  border: none;
   border-radius: 30px;
-  transition: 0.25s ease;
+
+  background: #cbd5e1;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
 }
 
-.toggle-slider::before {
-  content: "";
+.gateway-toggle.active {
+  background: #635bff;
+}
+
+.gateway-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.toggle-circle {
   position: absolute;
-  width: 19px;
-  height: 19px;
-  left: 3px;
+
   top: 3px;
+  left: 3px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: #ffffff;
+
   border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
-  transition: 0.25s ease;
+
+  transition: transform 0.25s ease;
 }
 
-.gateway-toggle input:checked + .toggle-slider {
-  background: #2563eb;
+.gateway-toggle.active .toggle-circle {
+  transform: translateX(22px);
 }
 
-.gateway-toggle input:checked + .toggle-slider::before {
-  transform: translateX(21px);
+.toggle-spinner {
+  width: 12px;
+  height: 12px;
+
+  color: #635bff;
+
+  animation: spin 0.8s linear infinite;
 }
 
-/* ================================
-   Divider
-================================ */
+/* =========================================================
+   CARD BODY
+========================================================= */
 
-.gateway-divider {
-  width: 100%;
-  height: 1px;
-  background: #edf0f4;
-  margin: 20px 0;
+.gateway-card-body {
+  padding: 26px 24px;
 }
 
-/* ================================
-   Environment
-================================ */
+/* =========================================================
+   COMMON SECTION
+========================================================= */
 
-.environment-section {
-  margin-bottom: 22px;
+.gateway-section {
+  margin-bottom: 30px;
 }
 
-.environment-title {
+.section-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  gap: 15px;
+
+  margin-bottom: 16px;
 }
 
-.environment-title > span:first-child {
-  color: #293348;
-  font-size: 14px;
-  font-weight: 600;
+.section-heading h3 {
+  margin: 0;
+
+  color: #172033;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.active-environment {
-  padding: 4px 9px;
-  border-radius: 20px;
-  background: #eef5ff;
-  color: #2563eb;
-  font-size: 11px;
-  font-weight: 600;
+.section-heading p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+  font-size: 13px;
 }
 
-/* ================================
-   Radio Buttons
-================================ */
+/* =========================================================
+   MODE SELECTION
+========================================================= */
 
-.environment-options {
+.mode-selection-section {
+  padding-bottom: 26px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mode-radio-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.mode-radio-card {
   display: flex;
-  align-items: center;
-  gap: 28px;
-}
+  align-items: flex-start;
+  gap: 12px;
 
-.radio-option {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  color: #4b5568;
-  font-size: 14px;
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
   cursor: pointer;
-  user-select: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.radio-option input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+.mode-radio-card:hover {
+  border-color: #a5b4fc;
+  background: #fafaff;
 }
 
-.custom-radio {
-  position: relative;
+.mode-radio-card.selected {
+  border-color: #635bff;
+  background: #f7f6ff;
+
+  box-shadow: 0 0 0 1px rgba(99, 91, 255, 0.08);
+}
+
+.mode-radio-card input {
   width: 17px;
   height: 17px;
-  border: 2px solid #c7ccd6;
-  border-radius: 50%;
-  transition: 0.2s ease;
+
+  margin-top: 2px;
+
+  accent-color: #635bff;
+
+  cursor: pointer;
 }
 
-.radio-option input:checked + .custom-radio {
-  border-color: #2563eb;
+.mode-radio-card input:disabled {
+  cursor: not-allowed;
 }
 
-.radio-option input:checked + .custom-radio::after {
-  content: "";
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  top: 3px;
-  left: 3px;
-  border-radius: 50%;
-  background: #2563eb;
+.mode-radio-content strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 650;
 }
 
-.radio-option:hover .custom-radio {
-  border-color: #2563eb;
+.mode-radio-content span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.5;
 }
 
-/* ================================
-   Credentials
-================================ */
+.mode-help-text {
+  margin-top: 12px;
 
-.gateway-credentials {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   SECURITY NOTICE
+========================================================= */
+
+.gateway-security-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin-bottom: 30px;
+  padding: 15px 17px;
+
+  background: #f7f6ff;
+
+  border: 1px solid #ddd6fe;
+  border-radius: 10px;
+}
+
+.gateway-security-notice > svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #635bff;
+
+  font-size: 18px;
+}
+
+.gateway-security-notice strong {
+  display: block;
+
+  color: #312e81;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gateway-security-notice p {
+  margin: 4px 0 0;
+
+  color: #5b5b7a;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CREDENTIAL SECTION
+========================================================= */
+
+.credential-section {
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.live-credential-section {
+  margin-top: 24px;
+}
+
+/* =========================================================
+   CREDENTIAL HEADER
+========================================================= */
+
+.credential-section-header {
+  margin-bottom: 22px;
+}
+
+.credential-section-header > div {
+  position: relative;
+}
+
+.credential-section-header h3 {
+  margin: 9px 0 0;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.credential-section-header p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   CREDENTIAL BADGES
+========================================================= */
+
+.credential-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 52px;
+  height: 24px;
+
+  padding: 0 9px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.credential-badge.test {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.credential-badge.live {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+/* =========================================================
+   CREDENTIAL GRID
+========================================================= */
+
+.credentials-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
 }
 
-.credential-field {
+/*
+   Webhook Secret occupies full width
+*/
+
+.form-group:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.credential-field label {
-  color: #293348;
+.form-group label {
+  color: #334155;
+
   font-size: 13px;
   font-weight: 600;
 }
 
-.credential-field input {
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-group input {
   width: 100%;
   height: 44px;
+
   padding: 0 13px;
 
-  border: 1px solid #dfe3ea;
-  border-radius: 7px;
+  box-sizing: border-box;
 
-  outline: none;
+  color: #172033;
   background: #ffffff;
 
-  color: #293348;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  outline: none;
+
   font-size: 13px;
 
-  transition: 0.2s ease;
-  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
-.credential-field input::placeholder {
-  color: #a4abba;
+.form-group input::placeholder {
+  color: #94a3b8;
 }
 
-.credential-field input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+.form-group input:focus {
+  border-color: #635bff;
+
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
 }
 
-.credential-field input:disabled {
-  background: #f3f5f8;
-  color: #9aa2b1;
+.form-group input:disabled {
+  color: #94a3b8;
+
+  background: #f1f5f9;
+
   cursor: not-allowed;
 }
 
-/* ================================
-   Secret Input
-================================ */
+/* =========================================================
+   PASSWORD INPUT
+========================================================= */
 
-.secret-input-wrapper {
+.password-input-wrapper {
   position: relative;
+
   width: 100%;
 }
 
-.secret-input-wrapper input {
-  padding-right: 44px;
+.password-input-wrapper input {
+  padding-right: 45px;
 }
 
-.secret-toggle-btn {
+.password-toggle {
   position: absolute;
-  right: 5px;
+
   top: 50%;
+  right: 7px;
+
   width: 34px;
   height: 34px;
-
-  transform: translateY(-50%);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: none;
+  transform: translateY(-50%);
+
+  color: #64748b;
   background: transparent;
-  color: #7b8496;
 
-  border-radius: 5px;
+  border: none;
+  border-radius: 6px;
+
   cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-.secret-toggle-btn:hover {
-  background: #f1f4f8;
-  color: #2563eb;
+.password-toggle:hover:not(:disabled) {
+  color: #334155;
+  background: #f1f5f9;
 }
 
-.secret-toggle-btn:disabled {
+.password-toggle:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-/* ================================
-   Security Note
-================================ */
+/* =========================================================
+   SAVE AREA
+========================================================= */
 
-.gateway-security-note {
+.credential-save-area {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  justify-content: flex-end;
 
-  margin-top: 20px;
-  padding: 11px 13px;
+  margin-top: 22px;
+  padding-top: 20px;
 
-  border-radius: 7px;
-  background: #f7f9fc;
-
-  color: #7b8496;
-  font-size: 12px;
+  border-top: 1px solid #e2e8f0;
 }
 
-.gateway-security-note svg {
-  flex-shrink: 0;
-  color: #64748b;
-  font-size: 15px;
-}
-
-/* ================================
-   Card Footer
-================================ */
-
-.gateway-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-top: 20px;
-  padding-top: 18px;
-
-  border-top: 1px solid #edf0f4;
-}
-
-.gateway-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-}
-
-.status-enabled {
-  color: #16805c;
-}
-
-.status-enabled .status-dot {
-  background: #19a974;
-}
-
-.status-disabled {
-  color: #8a93a3;
-}
-
-.status-disabled .status-dot {
-  background: #aeb5c0;
-}
-
-/* ================================
-   Save Button
-================================ */
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
 
 .save-gateway-btn {
+  min-width: 205px;
+  height: 44px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 
-  min-width: 145px;
-  height: 40px;
-  padding: 0 16px;
+  padding: 0 18px;
+
+  color: #ffffff;
 
   border: none;
-  border-radius: 7px;
-
-  background: #2563eb;
-  color: #ffffff;
+  border-radius: 8px;
 
   font-size: 13px;
   font-weight: 600;
 
   cursor: pointer;
-  transition: 0.2s ease;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.save-gateway-btn:hover {
+.test-save-btn {
+  background: #2563eb;
+}
+
+.test-save-btn:hover:not(:disabled) {
   background: #1d4ed8;
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.2);
+
+  transform: translateY(-1px);
 }
 
-.save-gateway-btn:active {
-  transform: translateY(1px);
+.live-save-btn {
+  background: #dc2626;
+}
+
+.live-save-btn:hover:not(:disabled) {
+  background: #b91c1c;
+
+  box-shadow: 0 5px 14px rgba(220, 38, 38, 0.2);
+
+  transform: translateY(-1px);
+}
+
+.save-gateway-btn:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .save-gateway-btn:disabled {
-  background: #d8dde6;
-  color: #8c95a4;
+  background: #a5a5a5;
+
   cursor: not-allowed;
+
+  box-shadow: none;
 }
 
-/* ================================
-   Tablet
-================================ */
+.save-gateway-btn svg {
+  font-size: 16px;
+}
 
-@media (max-width: 768px) {
+/* =========================================================
+   LOADING
+========================================================= */
+
+.payment-loading {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #64748b;
+}
+
+.payment-loading-icon {
+  width: 28px;
+  height: 28px;
+
+  margin-bottom: 12px;
+
+  color: #635bff;
+
+  animation: spin 0.8s linear infinite;
+}
+
+.payment-loading p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   BUTTON SPINNER
+========================================================= */
+
+.button-spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
   .payment-gateway-page {
     padding: 18px;
   }
 
-  .payment-gateway-card {
-    padding: 18px;
-  }
-
-  .gateway-credentials {
+  .mode-radio-container {
     grid-template-columns: 1fr;
-    gap: 15px;
   }
 
-  .gateway-card-footer {
-    align-items: flex-start;
-    gap: 15px;
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group:nth-child(3) {
+    grid-column: auto;
   }
 }
 
-/* ================================
-   Mobile
-================================ */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .payment-gateway-page {
-    padding: 14px;
+    padding: 12px;
   }
 
-  .payment-page-header {
-    margin-bottom: 18px;
-  }
-
-  .payment-page-header h2 {
-    font-size: 20px;
+  .payment-page-header h1 {
+    font-size: 21px;
   }
 
   .payment-page-header p {
     font-size: 12px;
-    line-height: 1.5;
-  }
-
-  .payment-gateway-card {
-    padding: 16px;
-    border-radius: 10px;
   }
 
   .gateway-card-header {
     align-items: flex-start;
+    flex-direction: column;
+
+    padding: 18px;
   }
 
-  .gateway-info {
+  .gateway-status {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .gateway-card-body {
+    padding: 18px;
+  }
+
+  .gateway-title-section {
     align-items: flex-start;
   }
 
   .gateway-icon {
     width: 42px;
     height: 42px;
-    font-size: 19px;
+
+    font-size: 20px;
   }
 
-  .gateway-info h3 {
-    font-size: 15px;
+  .gateway-title-section h2 {
+    font-size: 18px;
   }
 
-  .gateway-info p {
-    max-width: 210px;
-    line-height: 1.5;
+  .credential-section {
+    padding: 18px;
   }
 
-  .environment-options {
-    gap: 22px;
-  }
-
-  .gateway-card-footer {
-    flex-direction: column;
+  .credential-save-area {
+    justify-content: stretch;
   }
 
   .save-gateway-btn {
     width: 100%;
   }
+
+  .gateway-security-notice {
+    padding: 13px;
+  }
 }
 
-/* ================================
-   Small Mobile
-================================ */
+/* =========================================================
+   SWEETALERT
+========================================================= */
 
-@media (max-width: 400px) {
-  .payment-gateway-page {
-    padding: 10px;
-  }
-
-  .payment-gateway-card {
-    padding: 14px;
-  }
-
-  .gateway-info {
-    gap: 10px;
-  }
-
-  .gateway-icon {
-    width: 38px;
-    height: 38px;
-    font-size: 17px;
-  }
-
-  .gateway-info h3 {
-    font-size: 14px;
-  }
-
-  .gateway-info p {
-    font-size: 11px;
-  }
-
-  .environment-title {
-    align-items: flex-start;
-    gap: 10px;
-    flex-direction: column;
-  }
+.swal2-container {
+  z-index: 99999 !important;
 }

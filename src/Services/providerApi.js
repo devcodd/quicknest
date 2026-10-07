@@ -42,3 +42,11 @@ export const updateProviderStatus = async (
 
   return response.data;
 };
+export const updateFeaturedStatus = async (userId, isFeatured) => {
+  const response = await api.post("/admin/update-featured-status", {
+    userId,
+    isFeatured,
+  });
+
+  return response.data;
+};

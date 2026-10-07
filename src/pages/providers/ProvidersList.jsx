@@ -1,33 +1,68 @@
 import React, { useEffect, useState } from "react";
+
 import {
   FiEye,
   FiRefreshCw,
   FiSearch,
   FiUser,
-  FiWifi,
-  FiWifiOff,
   FiCheckCircle,
   FiXCircle,
   FiClock,
   FiChevronLeft,
   FiChevronRight,
 } from "react-icons/fi";
+
 import Swal from "sweetalert2";
 
-import { getAllProviders, getProviderById } from "../../Services/providerApi";
+import {
+  getAllProviders,
+  getProviderById,
+  updateFeaturedStatus,
+} from "../../Services/providerApi";
 
 import "./ProvidersList.css";
+
 import ProviderDrawer from "./ProviderDrawer";
+
 const ProvidersList = () => {
+  // --------------------------------------------------
+  // PROVIDERS
+  // --------------------------------------------------
+
   const [providers, setProviders] = useState([]);
+
+  // --------------------------------------------------
+  // LOADING
+  // --------------------------------------------------
+
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
+  // --------------------------------------------------
+  // FEATURED UPDATE
+  // --------------------------------------------------
+
+  const [updatingFeaturedId, setUpdatingFeaturedId] = useState(null);
+
+  // --------------------------------------------------
+  // SEARCH
+  // --------------------------------------------------
+
   const [search, setSearch] = useState("");
+
+  // --------------------------------------------------
+  // PROVIDER DRAWER
+  // --------------------------------------------------
+
   const [selectedProvider, setSelectedProvider] = useState(null);
 
   const [showDrawer, setShowDrawer] = useState(false);
+
   const [loadingDetails, setLoadingDetails] = useState(false);
+
+  // --------------------------------------------------
+  // PAGINATION
+  // --------------------------------------------------
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -36,10 +71,11 @@ const ProvidersList = () => {
    * in the endpoint you've shared, so pagination is handled
    * on the loaded provider list.
    */
+
   const itemsPerPage = 10;
 
   // --------------------------------------------------
-  // Fetch Providers
+  // FETCH PROVIDERS
   // --------------------------------------------------
 
   const fetchProviders = async (isRefresh = false) => {
@@ -81,22 +117,30 @@ const ProvidersList = () => {
     }
   };
 
+  // --------------------------------------------------
+  // INITIAL FETCH
+  // --------------------------------------------------
+
   useEffect(() => {
     fetchProviders();
   }, []);
 
   // --------------------------------------------------
-  // Search
+  // SEARCH
   // --------------------------------------------------
 
   const filteredProviders = providers.filter((provider) => {
     const customer = provider?.customerId || {};
+
     const profile = provider?.profile || {};
+
     const service = provider?.service || {};
 
     const searchText = search.toLowerCase().trim();
 
-    if (!searchText) return true;
+    if (!searchText) {
+      return true;
+    }
 
     return (
       customer?.name?.toLowerCase().includes(searchText) ||
@@ -108,6 +152,11 @@ const ProvidersList = () => {
       service?.address?.state?.toLowerCase().includes(searchText)
     );
   });
+
+  // --------------------------------------------------
+  // UPDATE PROVIDER AFTER DRAWER ACTION
+  // --------------------------------------------------
+
   const handleProviderStatusUpdated = (updatedProvider) => {
     setSelectedProvider(updatedProvider);
 
@@ -117,8 +166,79 @@ const ProvidersList = () => {
       ),
     );
   };
+
   // --------------------------------------------------
-  // Pagination
+  // FEATURED TOGGLE
+  // --------------------------------------------------
+
+  const handleFeaturedToggle = async (provider) => {
+    const userId = provider?.customerId?.userId;
+
+    if (!userId) {
+      Swal.fire({
+        icon: "error",
+        title: "User ID not found",
+        text: "Unable to update featured status.",
+      });
+
+      return;
+    }
+
+    const newFeaturedStatus = !Boolean(provider?.isFeatured);
+
+    try {
+      setUpdatingFeaturedId(userId);
+
+      const response = await updateFeaturedStatus(userId, newFeaturedStatus);
+
+      if (!response?.success) {
+        throw new Error(
+          response?.message || "Failed to update featured status.",
+        );
+      }
+
+      /*
+       * Update only the provider whose
+       * featured status was changed.
+       */
+      setProviders((prevProviders) =>
+        prevProviders.map((item) =>
+          item?.customerId?.userId === userId
+            ? {
+                ...item,
+                isFeatured: newFeaturedStatus,
+              }
+            : item,
+        ),
+      );
+
+      Swal.fire({
+        icon: "success",
+        title: "Updated",
+        text: newFeaturedStatus
+          ? "Provider marked as featured."
+          : "Provider removed from featured.",
+        timer: 1200,
+        showConfirmButton: false,
+      });
+    } catch (error) {
+      console.error("Featured status update error:", error);
+
+      Swal.fire({
+        icon: "error",
+        title: "Update Failed",
+        text:
+          error?.response?.data?.message ||
+          error?.message ||
+          "Unable to update featured status.",
+      });
+    } finally {
+      setUpdatingFeaturedId(null);
+    }
+  };
+
+  // --------------------------------------------------
+  // PAGINATION
   // --------------------------------------------------
 
   const totalPages = Math.ceil(filteredProviders.length / itemsPerPage);
@@ -130,12 +250,16 @@ const ProvidersList = () => {
     startIndex + itemsPerPage,
   );
 
+  // --------------------------------------------------
+  // RESET PAGE WHEN SEARCH CHANGES
+  // --------------------------------------------------
+
   useEffect(() => {
     setCurrentPage(1);
   }, [search]);
 
   // --------------------------------------------------
-  // View Provider
+  // VIEW PROVIDER
   // --------------------------------------------------
 
   const handleViewProvider = async (provider) => {
@@ -185,7 +309,7 @@ const ProvidersList = () => {
   };
 
   // --------------------------------------------------
-  // Close Drawer
+  // CLOSE DRAWER
   // --------------------------------------------------
 
   const handleCloseDrawer = () => {
@@ -197,7 +321,7 @@ const ProvidersList = () => {
   };
 
   // --------------------------------------------------
-  // Helpers
+  // HELPERS
   // --------------------------------------------------
 
   const getProviderName = (provider) => {
@@ -215,7 +339,9 @@ const ProvidersList = () => {
   const getLocation = (provider) => {
     const address = provider?.service?.address;
 
-    if (!address) return "—";
+    if (!address) {
+      return "—";
+    }
 
     const location = [address.city, address.state].filter(Boolean).join(", ");
 
@@ -235,7 +361,9 @@ const ProvidersList = () => {
   };
 
   const getInitials = (name) => {
-    if (!name) return "P";
+    if (!name) {
+      return "P";
+    }
 
     return name
       .split(" ")
@@ -254,7 +382,7 @@ const ProvidersList = () => {
   };
 
   // --------------------------------------------------
-  // Loading
+  // LOADING
   // --------------------------------------------------
 
   if (loading) {
@@ -262,11 +390,16 @@ const ProvidersList = () => {
       <div className="providers-page">
         <div className="providers-loading">
           <div className="providers-spinner"></div>
+
           <p>Loading providers...</p>
         </div>
       </div>
     );
   }
+
+  // --------------------------------------------------
+  // UI
+  // --------------------------------------------------
 
   return (
     <div className="providers-page">
@@ -277,6 +410,7 @@ const ProvidersList = () => {
       <div className="providers-header">
         <div>
           <h2>Providers</h2>
+
           <p>Manage and review service providers</p>
         </div>
 
@@ -304,6 +438,7 @@ const ProvidersList = () => {
 
           <div>
             <span>Total Providers</span>
+
             <strong>{providers.length}</strong>
           </div>
         </div>
@@ -315,6 +450,7 @@ const ProvidersList = () => {
 
           <div>
             <span>Approved</span>
+
             <strong>
               {providers.filter((provider) => provider?.isApproved).length}
             </strong>
@@ -328,6 +464,7 @@ const ProvidersList = () => {
 
           <div>
             <span>Pending</span>
+
             <strong>
               {
                 providers.filter(
@@ -339,14 +476,15 @@ const ProvidersList = () => {
         </div>
 
         <div className="provider-summary-card">
-          <div className="summary-icon online">
-            <FiWifi />
+          <div className="summary-icon">
+            <FiCheckCircle />
           </div>
 
           <div>
-            <span>Online Now</span>
+            <span>Featured</span>
+
             <strong>
-              {providers.filter((provider) => provider?.isOnline).length}
+              {providers.filter((provider) => provider?.isFeatured).length}
             </strong>
           </div>
         </div>
@@ -399,7 +537,7 @@ const ProvidersList = () => {
                 <th>Location</th>
                 <th>Rating</th>
                 <th>Status</th>
-                <th>Online</th>
+                <th>Featured</th>
                 <th>Bookings</th>
                 <th>Action</th>
               </tr>
@@ -409,12 +547,21 @@ const ProvidersList = () => {
               {currentProviders.length > 0 ? (
                 currentProviders.map((provider, index) => {
                   const name = getProviderName(provider);
+
                   const customer = provider?.customerId;
+
                   const status = getStatus(provider);
+
+                  const userId = customer?.userId;
+
+                  const isFeatured = Boolean(provider?.isFeatured);
+
+                  const isUpdating = updatingFeaturedId === userId;
 
                   return (
                     <tr key={provider?._id || index}>
                       {/* # */}
+
                       <td>
                         <span className="provider-number">
                           {startIndex + index + 1}
@@ -422,6 +569,7 @@ const ProvidersList = () => {
                       </td>
 
                       {/* PROVIDER */}
+
                       <td>
                         <div className="provider-info">
                           {customer?.profileImage ? (
@@ -445,6 +593,7 @@ const ProvidersList = () => {
                       </td>
 
                       {/* SERVICE */}
+
                       <td>
                         <span className="service-name">
                           {getServiceName(provider)}
@@ -452,6 +601,7 @@ const ProvidersList = () => {
                       </td>
 
                       {/* LOCATION */}
+
                       <td>
                         <span className="provider-location">
                           {getLocation(provider)}
@@ -459,6 +609,7 @@ const ProvidersList = () => {
                       </td>
 
                       {/* RATING */}
+
                       <td>
                         <div className="provider-rating">
                           <span className="rating-star">★</span>
@@ -468,6 +619,7 @@ const ProvidersList = () => {
                       </td>
 
                       {/* STATUS */}
+
                       <td>
                         {status === "approved" && (
                           <span className="provider-status approved">
@@ -491,22 +643,29 @@ const ProvidersList = () => {
                         )}
                       </td>
 
-                      {/* ONLINE */}
+                      {/* FEATURED */}
+
                       <td>
-                        {provider?.isOnline ? (
-                          <span className="online-status online">
-                            <FiWifi />
-                            Online
+                        <label
+                          className={`apple-switch ${
+                            isUpdating ? "updating" : ""
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={isFeatured}
+                            disabled={isUpdating || !userId}
+                            onChange={() => handleFeaturedToggle(provider)}
+                          />
+
+                          <span className="apple-slider">
+                            <span className="apple-knob"></span>
                           </span>
-                        ) : (
-                          <span className="online-status offline">
-                            <FiWifiOff />
-                            Offline
-                          </span>
-                        )}
+                        </label>
                       </td>
 
                       {/* BOOKINGS */}
+
                       <td>
                         <span className="booking-count">
                           {provider?.totalBookings ?? 0}
@@ -514,6 +673,7 @@ const ProvidersList = () => {
                       </td>
 
                       {/* ACTION */}
+
                       <td>
                         <button
                           type="button"
@@ -522,6 +682,7 @@ const ProvidersList = () => {
                           title="View Provider"
                         >
                           <FiEye />
+
                           <span>View</span>
                         </button>
                       </td>
@@ -578,18 +739,21 @@ const ProvidersList = () => {
                 <FiChevronLeft />
               </button>
 
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map(
-                (page) => (
-                  <button
-                    type="button"
-                    key={page}
-                    className={currentPage === page ? "active" : ""}
-                    onClick={() => setCurrentPage(page)}
-                  >
-                    {page}
-                  </button>
-                ),
-              )}
+              {Array.from(
+                {
+                  length: totalPages,
+                },
+                (_, index) => index + 1,
+              ).map((page) => (
+                <button
+                  type="button"
+                  key={page}
+                  className={currentPage === page ? "active" : ""}
+                  onClick={() => setCurrentPage(page)}
+                >
+                  {page}
+                </button>
+              ))}
 
               <button
                 type="button"
@@ -604,8 +768,7 @@ const ProvidersList = () => {
       </div>
 
       {/* ============================================
-          PROVIDER DRAWER PLACEHOLDER
-          We will replace this in the next step.
+          PROVIDER DRAWER
       ============================================ */}
 
       {showDrawer && (

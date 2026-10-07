@@ -700,3 +700,61 @@
     font-size: 13px;
   }
 }
+/* ============================================
+   APPLE STYLE FEATURED TOGGLE
+============================================ */
+
+.apple-switch {
+  position: relative;
+  display: inline-flex;
+  width: 44px;
+  height: 26px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.apple-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.apple-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #d1d1d6;
+  transition: background-color 0.25s ease;
+}
+
+.apple-knob {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease;
+}
+
+.apple-switch input:checked + .apple-slider {
+  background: #34c759;
+}
+
+.apple-switch input:checked + .apple-slider .apple-knob {
+  transform: translateX(18px);
+}
+
+.apple-switch input:disabled + .apple-slider {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.apple-switch.updating {
+  pointer-events: none;
+}

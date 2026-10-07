@@ -12,6 +12,7 @@ import {
   FiPercent,
   FiFileText,
   FiCreditCard,
+  FiCalendar,
 } from "react-icons/fi";
 import { FiHelpCircle } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -106,6 +107,12 @@ const Sidebar = ({ showLogo = true }) => {
             label="Providers"
             active={location.pathname === "/dashboard/providers"}
             onClick={() => navigate("/dashboard/providers")}
+          />
+          <SidebarItem
+            icon={<FiCalendar />}
+            label="Bookings"
+            active={location.pathname === "/dashboard/bookings"}
+            onClick={() => navigate("/dashboard/bookings")}
           />
         </div>
 
