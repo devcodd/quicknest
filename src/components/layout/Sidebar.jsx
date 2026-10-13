@@ -34,7 +34,7 @@ const SidebarItem = ({
 
       <span className="sidebar-item-label">{label}</span>
 
-      {hasSubmenu && <FiChevronRight className="sidebar-arrow" />}
+      {/* {hasSubmenu && <FiChevronRight className="sidebar-arrow" />} */}
     </button>
   );
 };
@@ -71,12 +71,12 @@ const Sidebar = ({ showLogo = true }) => {
           />
 
           {/* Order List */}
-          <SidebarItem
+          {/* <SidebarItem
             icon={<FiClipboard />}
             label="Order List"
             active={location.pathname === "/dashboard/orderlist"}
             onClick={() => navigate("/dashboard/orderlist")}
-          />
+          /> */}
         </div>
 
         {/* ==========================================
@@ -87,12 +87,12 @@ const Sidebar = ({ showLogo = true }) => {
           <div className="sidebar-heading">USER MANAGEMENT</div>
 
           {/* All Users */}
-          <SidebarItem
+          {/* <SidebarItem
             icon={<FiUser />}
             label="All Users"
             active={location.pathname === "/dashboard/users"}
             onClick={() => navigate("/dashboard/users")}
-          />
+          /> */}
 
           {/* Customer List */}
           <SidebarItem
