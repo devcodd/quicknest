@@ -26,6 +26,7 @@ import CustomersList from "../pages/customers/CustomersList";
 import ProvidersList from "../pages/providers/ProvidersList";
 import PaymentGateway from "../pages/paymentGateway/PaymentGateway";
 import Bookings from "../pages/booking/Bookings";
+import ReviewsList from "../pages/Reviews/ReviewsList";
 
 const AppRoutes = () => {
   return (
@@ -116,6 +117,7 @@ const AppRoutes = () => {
         <Route path="/dashboard/providers" element={<ProvidersList />} />
         <Route path="/dashboard/payment-gateway" element={<PaymentGateway />} />
         <Route path="/dashboard/bookings" element={<Bookings />} />
+        <Route path="/dashboard/reviews" element={<ReviewsList />} />
       </Route>
 
       {/* ==========================================

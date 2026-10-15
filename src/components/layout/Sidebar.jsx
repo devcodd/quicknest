@@ -13,6 +13,7 @@ import {
   FiFileText,
   FiCreditCard,
   FiCalendar,
+  FiStar,
 } from "react-icons/fi";
 import { FiHelpCircle } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -178,6 +179,13 @@ const Sidebar = ({ showLogo = true }) => {
             hasSubmenu
             active={location.pathname.startsWith("/dashboard/services")}
             onClick={() => navigate("/dashboard/services")}
+          />
+
+          <SidebarItem
+            icon={<FiStar />}
+            label="Reviews"
+            active={location.pathname === "/dashboard/reviews"}
+            onClick={() => navigate("/dashboard/reviews")}
           />
           <SidebarItem
             icon={<FiCreditCard />}
