@@ -27,6 +27,7 @@ import ProvidersList from "../pages/providers/ProvidersList";
 import PaymentGateway from "../pages/paymentGateway/PaymentGateway";
 import Bookings from "../pages/booking/Bookings";
 import ReviewsList from "../pages/Reviews/ReviewsList";
+import ProviderDetails from "../pages/providers/ProviderDetails";
 
 const AppRoutes = () => {
   return (
@@ -118,6 +119,7 @@ const AppRoutes = () => {
         <Route path="/dashboard/payment-gateway" element={<PaymentGateway />} />
         <Route path="/dashboard/bookings" element={<Bookings />} />
         <Route path="/dashboard/reviews" element={<ReviewsList />} />
+        <Route path="providers/:userId" element={<ProviderDetails />} />
       </Route>
 
       {/* ==========================================

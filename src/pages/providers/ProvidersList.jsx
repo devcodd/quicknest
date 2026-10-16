@@ -23,7 +23,7 @@ import {
 import "./ProvidersList.css";
 
 import ProviderDrawer from "./ProviderDrawer";
-
+import { useNavigate } from "react-router-dom";
 const ProvidersList = () => {
   // --------------------------------------------------
   // PROVIDERS
@@ -37,7 +37,7 @@ const ProvidersList = () => {
 
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
-
+  const navigate = useNavigate();
   // --------------------------------------------------
   // FEATURED UPDATE
   // --------------------------------------------------
@@ -585,7 +585,16 @@ const ProvidersList = () => {
                           )}
 
                           <div className="provider-info-text">
-                            <strong>{name}</strong>
+                            <strong
+                              className="provider-name-link"
+                              onClick={() =>
+                                navigate(
+                                  `/dashboard/providers/${customer?.userId}`,
+                                )
+                              }
+                            >
+                              {name}
+                            </strong>
 
                             <span>{customer?.email || "—"}</span>
                           </div>
